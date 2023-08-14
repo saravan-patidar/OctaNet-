@@ -1,0 +1,688 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #e75602ee;
+    --text-color: #fff;
+    --second-color: #000000f3;
+    --pading-inline: 1rem 8rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: cursive;
+    border: none;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.header::before,
+.header::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--second-color);
+}
+
+.header::before {
+    top: 0;
+    left: 0;
+}
+
+.header::after {
+    top: 0;
+    right: 0;
+    background-color: var(--main-color);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    background-color: initial;
+    padding: var(--pading-inline);
+    z-index: 200;
+}
+
+.scrolled-navbar {
+    background-color: #333;
+}
+
+.logo {
+    color: var(--main-color);
+    font-style: oblique;
+    font-variant: small-caps;
+    background-color: #24211f;
+    padding: .2rem .5rem;
+    font-size: 2rem;
+}
+
+.nav-items {
+    gap: 50px;
+}
+
+.nav-items a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: 600;
+    word-spacing: 2px;
+}
+
+.nav-items a:hover {
+    color: var(--main-color);
+    background-color: var(--text-color);
+    border-radius: 4px;
+}
+
+.header .harley-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+    max-width: 600px;
+    z-index: 1;
+}
+
+.quote {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--text-color);
+    background-color: #60331eda;
+    width: 150px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero {
+    width: 50%;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    top: 30%;
+    left: 0;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 2rem auto;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff5500;
+    color: var(--text-color);
+}
+
+.heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+section {
+    padding: var(--pading-inline);
+    padding-top: 5rem;
+
+}
+
+#motorcycles {
+    background-color: #222222;
+    color: var(--text-color);
+
+}
+
+.feature-box {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    padding: 5rem 0;
+    gap: 60px;
+}
+
+.motorcycle {
+    width: 300px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #3a3939
+}
+
+.motorcycle img {
+    width: 100%;
+    height: 100%;
+}
+
+.motor-detail {
+    padding: 2rem;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--main-color);
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: .5s ease-in-out;
+}
+
+.motorcycle:hover .motor-detail {
+    visibility: visible;
+    transform: scaleY(1);
+    top: 0;
+    bottom: 0;
+}
+
+.motor-detail h3 {
+    font-size: 1.5rem;
+}
+
+
+#accessories {
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+
+.accessories-box {
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0rem;
+}
+
+.accessory {
+    width: 300px;
+    height: 450px;
+    color: #000000;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.accessory:hover {
+    background-color: #fff;
+}
+
+.accessory img {
+    width: 100%;
+}
+.accessory h3 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bolder;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.accessory p {
+    text-align: left;
+    margin: .2rem 1.3rem;
+    font-size: 1.2rem;
+}
+
+.accessory p.price {
+    font-weight: bolder;
+}
+
+.accessory .btn1 {
+    background-color: transparent;
+    padding: .3rem 1rem;
+    color: #000000;
+    font-size: 1.3rem;
+}
+
+#about {
+    padding-bottom: 5rem;
+    background-color: var(--second-color);
+    color: var(--text-color);
+}
+
+#about p {
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+}
+
+
+#contact {
+    padding-bottom: 5rem;
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+
+.contact-detail {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-detail img {
+    width: 400px;
+}
+
+#contact p {
+    font-size: 1.4rem;
+    margin: 3rem;
+}
+
+#contact .contact-from label {
+    display: block;
+    font-size: 1.6rem;
+    text-align: left;
+    padding: .2rem 3rem;
+}
+
+#contact .contact-from input,
+#contact .contact-from textarea {
+    font-size: 1.6rem;
+    width: 70%;
+    margin: 0 3rem;
+    padding: .5rem;
+    background-color: rgba(56, 54, 54, 0.846);
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border: 1px solid #cccccc86;
+    border-radius: 4px;
+}
+
+#contact .contact-from button {
+    width: 70%;
+    margin: 1rem 3rem;
+    padding: 1rem;
+    background-color: var(--second-color);
+    color: var(--text-color);
+}
+
+#contact .contact-from button:hover {
+    background-color: #ff5500;
+    color: var(--second-color);
+    font-weight: bolder;
+}
+
+footer {
+    text-align: center;
+    padding: .3rem;
+    background-color: var(--second-color);
+    color: var(--text-color);
+}
+.linkedin-post p{
+    font-size: 1.6rem;
+}
+
+@media (max-width:576px) {
+
+    .header::before,
+    .header::after {
+        width: 100%;
+    }
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    .nav-bar {
+        padding: 1rem 1rem;
+    }
+
+    .nav-items {
+        gap: 5px 15px;
+        margin: auto;
+        justify-content: space-around;
+    }
+
+    .nav-items a {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        margin: auto;
+    }
+
+    .harley-img {
+        position: relative;
+        top: 65%;
+        left: 0%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-30%, 10%);
+        z-index: 1;
+    }
+
+    .harley-img img {
+        width: 100%;
+    }
+
+    .hero {
+        width: 90%;
+        top: 15%;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .quote {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        background-color: var(--second-color);
+        color: var(--main-color);
+    }
+
+    section {
+        padding: 1rem 1rem;
+    }
+
+    .feature-box {
+        padding: 2rem 0;
+        grid-template-columns: 1fr;
+        margin: 0 1.5rem;
+        gap: 20px;
+    }
+
+    .motorcycle {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .accessories-box {
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .accessory {
+        margin-bottom: 2rem;
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-detail {
+        justify-content: center;
+    }
+
+    .contact-from {
+        text-align: center;
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .nav-bar {
+        padding: 1rem 3rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-items {
+        gap: 5px 15px;
+        margin: auto;
+    }
+
+    .nav-items a {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        margin: auto;
+    }
+
+    .harley-img {
+        position: relative;
+        top: 65%;
+        left: 3%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-30%, 10%);
+        z-index: 1;
+    }
+
+    .harley-img img {
+        width: 100%;
+    }
+
+    .hero {
+        width: 90%;
+        top: 15%;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .quote {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .btn {
+        background-color: var(--main-color);
+        color: var(--second-color);
+    }
+
+    section {
+        padding: 2rem 3rem;
+    }
+
+    .feature-box {
+        padding: 2rem 0;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 1rem;
+        gap: 10px;
+    }
+
+    .motorcycle {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .accessories-box {
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .accessory {
+        margin: 1rem 0.5rem;
+        width: 100%;
+        height: 400px;
+    }
+
+    .accessory h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-detail {
+        justify-content: center;
+    }
+
+    .contact-detail img {
+        max-width: 250px;
+    }
+
+    .contact-from {
+        text-align: center;
+        margin: 0;
+    }
+
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .nav-bar {
+        padding: 1rem 3rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-items {
+        gap: 5px 15px;
+        margin: auto;
+    }
+
+    .nav-items a {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        margin: auto;
+    }
+
+    .harley-img {
+        position: relative;
+        top: 65%;
+        left: 3%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-30%, 10%);
+        z-index: 1;
+    }
+
+    .harley-img img {
+        width: 100%;
+    }
+
+    .hero {
+        width: 90%;
+        top: 15%;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .quote {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .btn {
+        background-color: var(--main-color);
+        color: var(--second-color);
+    }
+
+    section {
+        padding: 2rem 3rem;
+    }
+
+    .feature-box {
+        padding: 2rem 0;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 1rem;
+        gap: 10px;
+    }
+
+    .motorcycle {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .accessories-box {
+        justify-content: center;
+        padding: 2rem 0;
+    }
+
+    .accessory {
+        margin: 1rem 0.5rem;
+        width: 100%;
+        height: 400px;
+    }
+
+    .accessory h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-detail {
+        justify-content: center;
+    }
+
+    .contact-detail img {
+        max-width: 250px;
+    }
+
+    .contact-from {
+        text-align: center;
+        margin: 0;
+    }
+
+}
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    section{
+        padding: 1rem 3rem;
+    }
+    .feature-box{
+        gap: 3rem;
+    }
+
+}
